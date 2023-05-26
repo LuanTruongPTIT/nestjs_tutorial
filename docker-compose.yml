@@ -1,0 +1,23 @@
+services:
+  dev-db:
+    image: postgres
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: luantruong 
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
+      - nestjs
+  test-db:
+    image: postgres
+    ports:
+      - 5435:5432
+    environment:
+      POSTGRES_USER: luantruong
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: nest
+    networks:
+      - nestjs
+networks:
+  nestjs:
